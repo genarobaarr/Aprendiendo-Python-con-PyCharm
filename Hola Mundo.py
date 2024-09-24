@@ -277,3 +277,17 @@ if 0 < edad < 100:
         print("Es menor de edad!")
 else:
     print("Coloca una edad correcta")
+
+'''
+Colecciones
+'''
+'''
+Listas
+'''
+
+lista = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"]
+
+print(lista[2])
+print(lista[-3])
+print(lista[0:3])
+print(lista[:3])
