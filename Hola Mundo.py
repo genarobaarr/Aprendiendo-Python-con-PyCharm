@@ -112,20 +112,20 @@ c = 13
 d = 10
 
 #Realizando una expresion con operadores lógicos y relacionales
-resultado = ((a>b) or (a<c) and (a==c) or (a >= b))
+resultado = ((a > b) or (a < c) and (a == c) or (a >= b))
 print("El resultado de ((a>b) or (a<c) and (a==c) or (a >= b)) es: ", resultado, "\n")
 
 #Más ejemplos
 a = 10
 b = 15
 c = 20
-resultado = ((a<b) and (b<c))
+resultado = ((a < b) and (b < c))
 print("El resultado de ((a<b) and (b<c)) es:", resultado)
-resultado = ((a>b) and (b<c))
+resultado = ((a > b) and (b < c))
 print("El resultado de ((a>b) and (b<c)) es:", resultado)
-resultado = ((a>b) or (b<c))
+resultado = ((a > b) or (b < c))
 print("El resultado de ((a>b) and (b<c)) es:", resultado)
-resultado = not((a>b) or (b<c))
+resultado = not((a > b) or (b < c))
 print("El resultado de not((a>b) and (b<c)) es:", resultado, "\n")
 
 '''
@@ -277,6 +277,7 @@ if 0 < edad < 100:
         print("Es menor de edad!")
 else:
     print("Coloca una edad correcta")
+print("\n")
 
 '''
 Colecciones
@@ -285,9 +286,276 @@ Colecciones
 Listas
 '''
 
-lista = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"]
+listaParaEjemplo = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", 40, 10.567, [1, 2, 3], True]
 
-print(lista[2])
-print(lista[-3])
-print(lista[0:3])
-print(lista[:3])
+print(listaParaEjemplo[2])
+print(listaParaEjemplo[-3])
+print(listaParaEjemplo[1:3])
+print(listaParaEjemplo[:3])
+print(listaParaEjemplo[3:])
+print("\n")
+
+#Saber la longitud (cantidad de elementos de una lista)
+print(len(listaParaEjemplo))
+print("\n")
+
+#Agregar elementos al final de la lista
+lista1 = [1, 2, 3, 4, 5]
+lista1.append(6)
+lista1.append("Good job!")
+print(lista1)
+print("\n")
+
+#Agregar elementos en una posición determinada
+lista1.insert(2, 2.5)
+print(lista1)
+print("\n")
+
+#Agregar varios elementos a la vez al final de la lista
+lista1.extend([7, 8, 9])
+print(lista1)
+print("\n")
+
+#Sumar dos listas
+lista2 = [10,11,12,13]
+listaSuma = lista1 + lista2
+print(listaSuma)
+print("\n")
+
+#Saber si un elemento se encuentra el valor buscado
+print(2.5 in lista1)
+print("Good job!" in lista1)
+print(15 in lista1)
+print("\n")
+
+#Saber en que indice se encuetra el valor buscado
+print(lista1.index(2))
+print(lista1.index("Good job!"))
+print("\n")
+
+#Saber cuantos valores del elemento buscado existen
+lista1.extend([7, 8, 9, 1, 2.5, "Good job!", 8, 1]) #Agregando valores para ver el ejemplo
+print(lista1.count(1))
+print(lista1.count("Good job!"))
+print(lista1.count("Bad job!"))
+print("\n")
+
+#Eliminar un elemento de la lista
+lista3 = [1, 2, 3, 4, 5, "Hello!"]
+lista3.pop() #Se elimina el ultimo elemento de la lista
+print(lista3)
+lista3.pop(3) #Se elimina elemento del indice
+print(lista3)
+print("\n")
+
+#Eliminar un elemento de la lista si no se el indice
+lista3.remove(1)
+print(lista3)
+lista3.remove(2)
+print(lista3)
+print("\n")
+
+#Eliminar toda la lista completa
+lista3.clear()
+print(lista3)
+print("\n")
+
+#Como invertir una lista
+lista4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+lista4.reverse()
+print(lista4)
+print("\n")
+
+#Hacer que en una lista se guarden dichas veces los elementos
+    #lista4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] * 2
+lista4 = lista4 * 2
+print(lista4)
+print("\n")
+
+#Ordenar todos los elementos de la lista ascendentemente
+lista5 = [5, 7, -1, 2, -6, 3, 9, 4, 8, 10, 6, 1]
+lista5.sort()
+print(lista5)
+print("\n")
+
+#Ordenar todos los elementos de la lista descendentemente
+lista6 = [5, 7, -1, 2, -6, 3, 9, 4, 8, 10, 6, 1]
+lista6.sort(reverse=True)
+print(lista6)
+print("\n")
+
+'''
+Tuplas
+'''
+tupla = (4, "Hello!", 6.78, [1, 2, 3], 4, 5)
+print(tupla)
+print(tupla[1])
+print(tupla[-1])
+print(tupla[2:])
+print(4 in tupla) #Saber si un elemento se encuentra en la tupla
+print(tupla.index("Hello!")) #Saber en que indice se encuetra el valor buscado
+print(tupla.count(4)) #Saber cuantos valores del elemento buscado existen
+print(len(tupla)) #Saber la longitud (cantidad de elementos de una tupla)
+print("\n")
+
+#Transformar una tupla a una lista
+listaDesdeTupla = list(tupla)
+print(listaDesdeTupla)
+print("\n")
+
+#Transformar de una lista a una tupla
+tuplaDesdeLista = tuple(lista4)
+print(tuplaDesdeLista)
+print("\n")
+
+'''
+Conjuntos
+'''
+conjunto = set()
+conjunto = {1, 2, 3, "Good job!", 4.56, 1, 2, 3}
+print(conjunto)
+print("\n")
+
+#Agregar elementos a un conjunto
+conjunto.add(5)
+conjunto.add("Bad job!")
+conjunto.add('z')
+print(conjunto)
+print("\n")
+
+#Como saber si un elemento existe en el conjunto
+print(3 in conjunto)
+print(4.56 in conjunto)
+print(6 in conjunto)
+print(6 not in conjunto)
+print("\n")
+
+#Eliminar un elemento de un conjutno
+conjunto.discard(3)
+conjunto.discard("Good job!")
+print(conjunto)
+print("\n")
+
+#Como vaciar un conjunto
+conjunto.clear()
+print(conjunto)
+print("\n")
+
+#Calcular si un conjunto es igual a otro
+conjuntoA = {1, 2, 3}
+conjuntoB = {3, 4, 5}
+conjuntoC = {3, 2, 1}
+print(conjuntoA == conjuntoB)
+print(conjuntoB == conjuntoC)
+print(conjuntoC == conjuntoA)
+print("\n")
+
+#Unir dos conjuntos (todos los elementos de los dos conjuntos)
+conjuntoD = conjuntoA | conjuntoB
+print(conjuntoD)
+conjuntoD = conjuntoA | conjuntoC
+print(conjuntoD)
+print("\n")
+
+#Intersección de dos conjuntos (elementos que están en los dos conjuntos)
+conjuntoD = conjuntoA & conjuntoB
+print(conjuntoD)
+conjuntoD = conjuntoA & conjuntoC
+print(conjuntoD)
+print("\n")
+
+#Diferencia de dos conjuntos (todos los elementos de A que no están en B)
+conjuntoD = conjuntoA - conjuntoB
+print(conjuntoD)
+conjuntoD = conjuntoA - conjuntoC
+print(conjuntoD)
+print("\n")
+
+#Diferencia SIMETRICA de dos conjuntos (todos los elementos que no se repiten en ambos conjuntos)
+conjuntoD = conjuntoA ^ conjuntoB
+print(conjuntoD)
+conjuntoD = conjuntoA ^ conjuntoC
+print(conjuntoD)
+print("\n")
+
+#Saber si un conjunto es un subconjunto de otro conjunto
+conjuntoD = {1, 2, 3, 4, 6}
+print(conjuntoA.issubset(conjuntoD))
+print(conjuntoB.issubset(conjuntoD))
+print(conjuntoC.issubset(conjuntoD))
+print("\n")
+
+#Saber si un conjunto es un superconjunto de otro conjunto
+print(conjuntoD.issuperset(conjuntoA))
+print(conjuntoD.issuperset(conjuntoB))
+print(conjuntoD.issuperset(conjuntoC))
+print("\n")
+
+#Saber si dos conjuntos son disconexos (no tener ningún elemento en común)
+print(conjuntoA.isdisjoint(conjuntoB))
+print(conjuntoB.isdisjoint(conjuntoC))
+print(conjuntoC.isdisjoint(conjuntoA))
+print("\n")
+
+#Como hacer un conjunto inmutable
+conjuntoE = frozenset({1, 2, 4, 8, 3, 6, 9})
+
+'''
+Diccionarios
+'''
+# Creación de diccionario
+diccionarioEjemplo = {"azul" : "bleu", "rojo" : "red", "verde" : "green"}
+print(diccionarioEjemplo)
+print(diccionarioEjemplo["azul"])
+print(diccionarioEjemplo["rojo"])
+print("\n")
+
+#Agregar nuevos elementos al diccionario
+diccionarioEjemplo["amarillo"] = "yellow"
+print(diccionarioEjemplo)
+
+#Modificar un elemento del diccionario
+diccionarioEjemplo["azul"] = "blue"
+print(diccionarioEjemplo)
+
+#Eliminar un elemento del diccionario
+del(diccionarioEjemplo["rojo"])
+print(diccionarioEjemplo)
+print("\n")
+
+#Ejemplos más complejo
+#1
+diccionario = {"Alejandro" : {"edad" : 20, "estatura" : 1.65}, "Jose" : {"edad" : 23, "estatura" : 1.77}, "Maria" : {"edad" : 19, "estatura" : 1.57}}
+print(diccionario["Alejandro"])
+print("\n")
+
+#2
+equipo = {10 : "Paulo Dybala", 11 : "Douglas Costa", 7 : "Cristiano Ronaldo", 17 : "Mario Mandzukic"}
+print(equipo)
+print(equipo[10])
+print(equipo[7])
+print("\n")
+
+#Saber la longitud del diccionario (cantidad de elementos hay)
+print(len(equipo))
+print("\n")
+
+#Saber si una clave existe
+print(17 in equipo)
+print(6 in equipo)
+
+#Que hacer si una clave no existe y evitamos excepción en consola
+print(equipo.get(6, "No existe un jugador con ese dorsal"))
+print("\n")
+
+#Mostrar solo las claves del diccionario
+print(equipo.keys())
+
+#Mostrar solo los valores del diccionario
+print(equipo.values())
+print("\n")
+
+#Eliminar todos los elementos del diccionario
+equipo.clear()
+print(equipo)
+print("\n")
