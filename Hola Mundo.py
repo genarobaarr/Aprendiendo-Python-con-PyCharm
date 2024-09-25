@@ -559,3 +559,39 @@ print("\n")
 equipo.clear()
 print(equipo)
 print("\n")
+
+'''
+Pilas
+'''
+
+pila = [1, 2, 3]
+print(pila)
+
+#Agregar elemento por el final de la pila
+pila.append(4)
+pila.append(5)
+print(pila)
+
+#Sacar elemento por el final de la pila
+x = pila.pop()
+print(f"Sacando el elemento {x}")
+print(pila)
+print("\n")
+
+'''
+Colas
+'''
+
+cola = ["Maria", "Alejandro", "Jose", "Mario"]
+print(cola)
+
+#Agregar elemento por el final de la cola
+cola.append("Karla")
+cola.append("Flor")
+print(cola)
+
+#Sacar elemento por el inicio de la cola
+x = cola.pop(0)
+print(f"Atendiendo ahora a {x}")
+print(cola)
+print("\n")
