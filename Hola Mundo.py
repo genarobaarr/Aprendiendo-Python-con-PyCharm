@@ -430,7 +430,7 @@ print(6 in conjunto)
 print(6 not in conjunto)
 print("\n")
 
-#Eliminar un elemento de un conjutno
+#Eliminar un elemento de un conjunto
 conjunto.discard(3)
 conjunto.discard("Good job!")
 print(conjunto)
